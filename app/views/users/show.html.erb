@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+
+Hello <%=@user.email%>. Bienvenue sur ta page profil
+
+
+<% else %>
+
+Tu es sur la page public de <%=@user.email%>
+
+<%end%>

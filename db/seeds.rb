@@ -19,6 +19,7 @@ User.create(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name
 )
+puts "user 1"
 
 User.create(
   email: "th2@yopmail.com",
@@ -27,3 +28,16 @@ User.create(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name
 )
+puts "user 2"
+
+e = Event.create(
+  start_date: Time.now,
+  admin: User.all.sample,
+  title: "zezerrez rz",
+  description: "hrzekaze akejazkejna zea zjnae alzne alzknealnze",
+  price: 300,
+  duration: 5,
+  location: "Paris"
+)
+
+a = Attendance.create(user:User.last.id,event:Event.last.id)
