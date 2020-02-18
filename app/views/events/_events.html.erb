@@ -1,11 +1,7 @@
-<div class="container">
-
-<div class="text-center mb-4"><%= link_to "Créer un Event", new_event_path, class:"btn btn-primary" %></div>
-
+  <h2>My events</h2>
   <div class="row" style="margin:auto">
-  <% @events.each_with_index do |e, index| %>
+  <% @userevents.each do |e| %>
 
-      <% i = index+1 %>
 
     <div class="card" style="width: 18rem;margin:10px">
       <div class="card-body" >
@@ -18,5 +14,4 @@
 
 
   <% end %>
-</div>
 </div>

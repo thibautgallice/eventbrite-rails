@@ -6,3 +6,6 @@ Profil de <%=@user.first_name%>. Bienvenue sur ta page profil
 <%=@user.email%><br />
 <%=@user.description%><br />
 <%= link_to "Change your email / password", edit_user_registration_path %>
+
+<br /><br /><br />
+<%= render 'events/events' %>

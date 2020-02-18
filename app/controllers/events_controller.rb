@@ -2,7 +2,6 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
 
-
   def index
     @events = Event.order('events.start_date ASC').all
   end
@@ -44,6 +43,12 @@ class EventsController < ApplicationController
 
 
   private
+
+  # def user_events
+  #   @user = current_user
+  #   @userevents = Event.order('events.start_date ASC').where(admin:@user)
+  #   return @userevents
+  # end
 
   def set_current_event
     @event = Event.find(params[:id])

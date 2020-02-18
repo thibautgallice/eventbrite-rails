@@ -3,7 +3,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    set_current_user
+    @user = set_current_user
+    @userevents = Event.order('events.start_date ASC').where(admin:@user)
+    puts "========================================================="
+    puts @userevents
+    puts "========================================================="
+
     if current_user == @user
       @user = User.find_by(id:params[:id])
     else 
