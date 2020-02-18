@@ -1,16 +1,8 @@
 Profil de <%=@user.first_name%>. Bienvenue sur ta page profil
 
-<br /><br /><br />
+<br />
 <%=@user.first_name%><br />
 <%=@user.last_name%><br />
 <%=@user.email%><br />
-
+<%=@user.description%><br />
 <%= link_to "Change your email / password", edit_user_registration_path %>
-
-
-
-
-
-
-<% if user_signed_in? %>
-<%end%>
