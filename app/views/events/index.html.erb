@@ -1,0 +1,27 @@
+<div class="container">
+
+
+<% unless params[:add_gossip].nil? %>
+<div class="alert alert-success" role="alert"><%=params[:add_gossip]%></div>
+<% end %>
+
+<div class="text-center mb-4"><%= link_to "Créer un Event", new_event_path, class:"btn btn-primary" %></div>
+
+  <div class="row" style="margin:auto">
+  <% @events.each_with_index do |e, index| %>
+
+      <% i = index+1 %>
+
+    <div class="card" style="width: 18rem;margin:10px">
+      <div class="card-body" >
+        <h5 class="card-title"><%= link_to "#{e.title}", event_path(e.id) %></h5>
+        <p class="card-text"><%= "#{e.description}" %></p>
+        <p style="font-style:italic">Prévu le <%= e.start_date%>. Durée <%= e.duration%> minutes.<br />Proposé par <%= link_to "#{e.admin.first_name}", user_path(e.admin.id) %></p>
+        <%= link_to "Voir l'event", event_path(e.id), class:"btn btn-primary" %>
+      </div>
+    </div>
+
+
+  <% end %>
+</div>
+</div>

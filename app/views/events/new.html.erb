@@ -1,0 +1,39 @@
+<br /><br /><% if @event.errors.any? %>
+  <div class="alert alert-danger" role="alert"><p>Nous n'avons pas réussi à créer l'event pour la (ou les) raison(s) suivante(s) :</p>
+  <ul>
+    <% @event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul></div>
+<% end %> <br />
+<b>Hey, post un petit event :)</b><br /><br />
+<%= form_tag url_for(action: 'create'), method: "post", :class => 'form-group'  do %>
+
+      <%= label_tag 'event title' %>
+      <%= text_field_tag 'title', nil, class:'form-control' %>
+      <br /> 
+
+      <%= label_tag 'event description' %>
+      <%= text_area_tag 'description', nil, class:'form-control' %>
+      <br /> 
+
+      <%= label_tag 'start date' %>
+      <%= datetime_field_tag 'start_date', nil, class:'form-control' %>
+      <br />
+
+      <%= label_tag 'duration' %>
+      <%= number_field_tag 'duration', nil, class:'form-control' %>
+      <br />
+
+      <%= label_tag 'price' %>
+      <%= number_field_tag 'price', nil, class:'form-control' %>
+      <br />
+
+      <%= label_tag 'location' %>
+      <%= text_area_tag 'location', nil, class:'form-control' %>
+      <br />
+
+
+      <%= submit_tag "Create event", class:"btn btn-primary" %>
+
+    <% end %>
