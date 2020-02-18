@@ -5,9 +5,6 @@ class UsersController < ApplicationController
   def show
     @user = set_current_user
     @userevents = Event.order('events.start_date ASC').where(admin:@user)
-    puts "========================================================="
-    puts @userevents
-    puts "========================================================="
 
     if current_user == @user
       @user = User.find_by(id:params[:id])

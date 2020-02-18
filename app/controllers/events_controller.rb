@@ -44,12 +44,6 @@ class EventsController < ApplicationController
 
   private
 
-  # def user_events
-  #   @user = current_user
-  #   @userevents = Event.order('events.start_date ASC').where(admin:@user)
-  #   return @userevents
-  # end
-
   def set_current_event
     @event = Event.find(params[:id])
   end
