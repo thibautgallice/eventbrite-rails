@@ -14,7 +14,7 @@ User.destroy_all
 
 User.create(
   email: "th1@yopmail.com",
-  encrypted_password: "123456",
+  # encrypted_password: "123456",
   description: Faker::Hacker.say_something_smart,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name
@@ -22,7 +22,7 @@ User.create(
 
 User.create(
   email: "th2@yopmail.com",
-  encrypted_password: "123456",
+  # encrypted_password: "123456",
   description: Faker::Hacker.say_something_smart,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name
