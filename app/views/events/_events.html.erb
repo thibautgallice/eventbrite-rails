@@ -1,8 +1,14 @@
-  <h2>My events</h2>
   <div class="row" style="margin:auto">
   <% @userevents.each do |e| %>
 
+<h5><%= link_to "#{e.title}", event_path(e.id), class:"badge badge-primary" %>&nbsp;</h5>
 
+  <% end %>
+</div>
+
+
+
+<%if false%>
     <div class="card" style="width: 18rem;margin:10px">
       <div class="card-body" >
         <h5 class="card-title"><%= link_to "#{e.title}", event_path(e.id) %></h5>
@@ -12,6 +18,4 @@
       </div>
     </div>
 
-
-  <% end %>
-</div>
+<%end%>

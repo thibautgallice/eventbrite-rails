@@ -1,11 +1,41 @@
-Profil de <%=@user.first_name%>. Bienvenue sur ta page profil
+<div class="container">
+    <div class="row my-2">
+        <div class="col-8 offset-2">
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h4 class="mb-3">Mon profil</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Identité</h5>
+                            <p>
+                                <%=@user.first_name%> <%=@user.last_name%>
+                            </p>
+                            
+                          
+                            <h5>Coordonnées</h5>
+                            <p>
+                                Email : <%=@user.email%> <%= link_to "(Modifier)", edit_user_registration_path %><br />
+                                Pwd : ******** <%= link_to "(Modifier)", edit_user_registration_path %>
 
-<br />
-<%=@user.first_name%><br />
-<%=@user.last_name%><br />
-<%=@user.email%><br />
-<%=@user.description%><br />
-<%= link_to "Change your email / password", edit_user_registration_path %>
+                            </p>
+                            <hr>
+                            <h5>À propos de moi</h5>
+                            <p>
+                                <%=@user.description%>
+                            </p>
+                            
+                            
 
-<br /><br /><br />
-<%= render 'events/events' %>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Mes événements</h5>
+                          
+                            <%= render 'events/events' %>
+                            
+
+
+                        </div>
+                       
+    </div>
+</div>
