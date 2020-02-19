@@ -1,24 +1,29 @@
 # README
+Ruby 2.5.1
+Rails 5.2.3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Heroku app
 
-Things you may want to cover:
+`http://eventbrite-rails.herokuapp.com/`
 
-* Ruby version
+## Install
 
-* System dependencies
+`git clone https://github.com/thibautgallice/eventbrite-rails.git`
 
-* Configuration
+`cd eventbrite-rails/`
 
-* Database creation
+`bundle install`
 
-* Database initialization
+`rails db:create`
 
-* How to run the test suite
+`rails db:migrate`
 
-* Services (job queues, cache servers, search engines, etc.)
+`rails db:reset`
 
-* Deployment instructions
+`rails server`
 
-* ...
+`.env` is needed.
+
+## Run
+
+`Browser > http://localhost:3000/`
